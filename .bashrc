@@ -25,9 +25,10 @@ export USER="${USER:-$(whoami)}"
 export GITUSER="$USER"
 export FTP=242
 export TZ=Europe/Moscow
-export REPOS="$HOME/Repos"
-export GHREPOS="$REPOS/github.com/$GITUSER"
-export DOTFILES="$GHREPOS/dot"
+export REPOS="$HOME/code/reps"
+export GHREPOS="$REPOS/github.com/CodingJediKnight"
+export GLREPOS="$REPOS/gitlab.com/JediKnight"
+export DOTFILES="$GHREPOS/dotfiles"
 export SCRIPTS="$DOTFILES/scripts"
 export SNIPPETS="$DOTFILES/snippets"
 export HELP_BROWSER=lynx
@@ -45,10 +46,6 @@ export VIRTUALMACHINES="$HOME/VirtualMachines"
 export WORKSPACES="$HOME/Workspaces" # container home dirs for mounting
 export ZETDIR="$GHREPOS/zet"
 export ZETTELCASTS="$VIDEOS/ZettelCasts"
-export CLIP_DIR="$VIDEOS/Clips"
-export CLIP_DATA="$GHREPOS/cmd-clip/data"
-export CLIP_VOLUME=0
-export CLIP_SCREEN=0
 export TERM=xterm-256color
 export HRULEWIDTH=73
 export EDITOR=vi
@@ -142,7 +139,6 @@ pathprepend \
 
 pathappend \
 	/usr/local/opt/coreutils/libexec/gnubin \
-	'/mnt/c/Windows' \
 	'/mnt/c/Program Files (x86)/VMware/VMware Workstation' \
 	/mingw64/bin \
 	/usr/local/bin \
@@ -236,8 +232,15 @@ _have setxkbmap && test -n "$DISPLAY" &&
 #      (use exec scripts instead, which work from vim and subprocs)
 
 unalias -a
+#alias tmux="env TERM=xterm-256color tmux"
+#alias tmux-new="tmux new-session -d -s $USER"
+#alias tmux-attach="tmux attach-session -t $USER"
+alias myip="dig myip.opendns.com @208.67.222.222"
+alias drips="docker ps -q | xargs -n 1 docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}} {{ .Name }}' | sed 's/ \// /'"
+alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
+alias cdef='echo -e "\033]6;1;bg;*;default\a"'
+
 alias todo='vi ~/.todo'
-alias ip='ip -c'
 alias '?'=duck
 alias '??'=gpt
 alias '???'=google
@@ -255,13 +258,7 @@ alias temp='cd $(mktemp -d)'
 alias view='vi -R' # which is usually linked to vim
 alias clear='printf "\e[H\e[2J"'
 alias c='printf "\e[H\e[2J"'
-alias coin="clip '(yes|no)'"
-alias iam=live
-alias neo="neo -D -c gold"
 alias more="less"
-alias disclaimer="clear; now; zet view disclaimer"
-alias main="obs scene Main"
-alias tight="obs scene Closeup"
 
 _have vim && alias vi=vim
 
@@ -326,6 +323,23 @@ clone() {
 	gh repo clone "$user/$name" -- --recurse-submodule
 	cd "$name"
 } && export -f clone
+
+ssh() {
+  command ssh $argv
+	echo -e "\033]6;1;bg;*;default\a"
+}
+
+is_ssh() {
+  [ -n "$SSH_CONNECTION" ]; or [ -n "$SSH_CLIENT" ]; or [ -n "$SSH_TTY" ]
+}
+
+is_tmux() {
+  [ -n "$TMUX" ]
+}
+
+grep_highlight() {
+  grep --color=always -E "${argv}[1]|\$" "$argv"[2];
+}
 
 # ------------- source external dependencies / completion ------------
 
