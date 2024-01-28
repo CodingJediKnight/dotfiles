@@ -1,5 +1,8 @@
 #!/bin/sh
-set -e
+
+# run from root dir
+SCRIPT_ROOT_DIR=$(dirname "$0")
+cd "$SCRIPT_ROOT_DIR" || exit
 
 # mkdir -p is not POSIX compliant
 [ ! -d ~/.local ] && mkdir ~/.local
@@ -9,7 +12,6 @@ ROOT_FILES='.bashrc
 .dircolors
 .inputrc
 .profile
-.bash_profile
 .gitconfig
 .gitattributes'
 
@@ -21,11 +23,6 @@ for file in $ROOT_FILES; do
 	if [ -L "$HOME_FILE_PATH" ] && [ "$ROOT_FILE_PATH" = "$CURRENT_FILE_PATH" ]; then
 		echo "$HOME_FILE_PATH already linked, skip"
 		continue
-	fi
-
-	if [ -L "$HOME_FILE_PATH" ] && [ "$ROOT_FILE_PATH" = "$CURRENT_FILE_PATH" ]; then
-		echo "$HOME_FILE_PATH already linked, skip"
-		continue
 	elif [ -e "$HOME_FILE_PATH" ] || [ -d "$HOME_FILE_PATH" ]; then
 		mv "$HOME_FILE_PATH" "$HOME_FILE_PATH".back
 		echo "$HOME_FILE_PATH moved to $HOME_FILE_PATH.back"
@@ -33,6 +30,8 @@ for file in $ROOT_FILES; do
 
   ln -sf "$CURRENT_FILE_PATH" "$HOME_FILE_PATH"
 done
+
+ln -sf "$PWD/.profile" "$HOME/.bash_profile"
 
 for i in vim tmux; do
   cd $i && ./setup
