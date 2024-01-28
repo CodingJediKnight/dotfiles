@@ -23,7 +23,7 @@ for file in $ROOT_FILES; do
 	if [ -L "$HOME_FILE_PATH" ] && [ "$ROOT_FILE_PATH" = "$CURRENT_FILE_PATH" ]; then
 		echo "$HOME_FILE_PATH already linked, skip"
 		continue
-	elif [ -e "$HOME_FILE_PATH" ] || [ -d "$HOME_FILE_PATH" ]; then
+	elif [ -e "$HOME_FILE_PATH" ]; then
 		mv "$HOME_FILE_PATH" "$HOME_FILE_PATH".back
 		echo "$HOME_FILE_PATH moved to $HOME_FILE_PATH.back"
 	fi

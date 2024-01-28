@@ -135,11 +135,35 @@ set fo+=M   " don't add space before or after multi-byte char
 set fo-=B   " don't add space between two multi-byte chars
 set fo+=1   " don't break a line after a one-letter word
 
-" requires PLATFORM env variable set (in ~/.bashrc)
-if $PLATFORM == 'mac'
-  " required for mac delete to work
-  set backspace=indent,eol,start
-endif
+" required for mac delete to work
+set backspace=indent,eol,start
+
+" specific key remap for Mac arrow moving
+" fn+Backspace
+noremap <Char-0x4> <Del>
+noremap! <Char-0x4> <Del>
+
+" fn+CMD+Backspace
+noremap <C-l><Char-0x4> $d
+noremap! <C-l><Char-0x4> <Del>
+
+" CMD+Left
+noremap <C-A> <Home>
+noremap! <C-A> <Home>
+
+" CMD+Right
+noremap <C-E> <End>
+noremap! <C-E> <End>
+
+" Alt+Left
+noremap <Esc>b <S-Left>
+noremap! <Esc>b <S-Left>
+inoremap <Esc>b <C-o>b
+
+" Alt+Right
+noremap <Esc>f <S-Right>
+noremap! <Esc>f <S-Right>
+inoremap <Esc>f <C-o>w
 
 " stop complaints about switching buffer with changes
 set hidden
@@ -396,20 +420,6 @@ map <F7> :set spell!<CR>
 map <F12> :set fdm=indent<CR>
 
 nmap <leader>2 :set paste<CR>i
-
-" disable arrow keys (vi muscle memory)
-" noremap <up> :echoerr "Umm, use k instead"<CR>
-" noremap <down> :echoerr "Umm, use j instead"<CR>
-" noremap <left> :echoerr "Umm, use h instead"<CR>
-" noremap <right> :echoerr "Umm, use l instead"<CR>
-" inoremap <up> <NOP>
-" inoremap <down> <NOP>
-" inoremap <left> <NOP>
-" inoremap <right> <NOP>
-
-" better use of arrow keys, number increment/decrement
-" nnoremap <up> <C-a>
-" nnoremap <down> <C-x>
 
 " Better page down and page up
 noremap <C-n> <C-d>
