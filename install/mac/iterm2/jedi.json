@@ -188,6 +188,12 @@
       "Action" : 10,
       "Text" : "[1;5F"
     },
+    "0xf702-0x300000-0x0" : {
+      "Version" : 0,
+      "Action" : 10,
+      "Text" : "OH",
+      "Label" : ""
+    },
     "0xf70c-0x20000" : {
       "Action" : 10,
       "Text" : "[20;2~"
@@ -216,10 +222,6 @@
       "Action" : 10,
       "Text" : "[1;5D"
     },
-    "0xf703-0x300000" : {
-      "Action" : 11,
-      "Text" : "0x5"
-    },
     "0x37-0x40000" : {
       "Action" : 11,
       "Text" : "0x1f"
@@ -228,13 +230,19 @@
       "Action" : 11,
       "Text" : "0xd"
     },
+    "0xf728-0x100000-0x75" : {
+      "Version" : 1,
+      "Action" : 11,
+      "Text" : "0x0b",
+      "Label" : ""
+    },
     "0xf701-0x240000" : {
       "Action" : 10,
       "Text" : "[1;5B"
     },
-    "0xf702-0x300000" : {
-      "Action" : 11,
-      "Text" : "0x1"
+    "0xf70b-0x20000" : {
+      "Action" : 10,
+      "Text" : "[19;2~"
     },
     "0xf703-0x220000" : {
       "Action" : 10,
@@ -243,10 +251,6 @@
     "0xf739-0x0" : {
       "Action" : 13,
       "Text" : ""
-    },
-    "0xf70b-0x20000" : {
-      "Action" : 10,
-      "Text" : "[19;2~"
     },
     "0xf728-0x0" : {
       "Action" : 11,
@@ -304,25 +308,31 @@
       "Action" : 12,
       "Text" : "1"
     },
+    "0xf703-0x300000-0x0" : {
+      "Version" : 0,
+      "Action" : 10,
+      "Text" : "OF",
+      "Label" : ""
+    },
     "0x33-0x200000" : {
       "Action" : 12,
       "Text" : "3"
-    },
-    "0x35-0x40000" : {
-      "Action" : 11,
-      "Text" : "0x1d"
     },
     "0x34-0x200000" : {
       "Action" : 12,
       "Text" : "4"
     },
-    "0x32-0x200000" : {
-      "Action" : 12,
-      "Text" : "2"
+    "0x35-0x40000" : {
+      "Action" : 11,
+      "Text" : "0x1d"
     },
     "0x35-0x200000" : {
       "Action" : 12,
       "Text" : "5"
+    },
+    "0x32-0x200000" : {
+      "Action" : 12,
+      "Text" : "2"
     },
     "0x36-0x200000" : {
       "Action" : 12,
@@ -432,6 +442,13 @@
     "Alpha Component" : 1,
     "Green Component" : 0.57852262672474808
   },
+  "Ansi 0 Color" : {
+    "Red Component" : 0.15686275064945221,
+    "Color Space" : "Calibrated",
+    "Blue Component" : 0.15686275064945221,
+    "Alpha Component" : 1,
+    "Green Component" : 0.15686275064945221
+  },
   "Transparency" : 0,
   "Ansi 1 Color" : {
     "Red Component" : 0.80000001192092896,
@@ -439,13 +456,6 @@
     "Blue Component" : 0.11372549086809158,
     "Alpha Component" : 1,
     "Green Component" : 0.14117647707462311
-  },
-  "Ansi 0 Color" : {
-    "Red Component" : 0.15686275064945221,
-    "Color Space" : "Calibrated",
-    "Blue Component" : 0.15686275064945221,
-    "Alpha Component" : 1,
-    "Green Component" : 0.15686275064945221
   },
   "Horizontal Spacing" : 1,
   "Ansi 4 Color" : {

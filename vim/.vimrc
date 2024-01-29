@@ -144,16 +144,13 @@ noremap <Char-0x4> <Del>
 noremap! <Char-0x4> <Del>
 
 " fn+CMD+Backspace
-noremap <C-l><Char-0x4> $d
-noremap! <C-l><Char-0x4> <Del>
+inoremap <C-K> <C-o>d$
 
-" CMD+Left
-noremap <C-A> <Home>
-noremap! <C-A> <Home>
+" fn+Alt+Backspace
+inoremap <Esc>d <C-o>diw
 
-" CMD+Right
-noremap <C-E> <End>
-noremap! <C-E> <End>
+" Alt+Backspace
+inoremap <Char-0x1b><Char-0x7f> <C-o>dvb
 
 " Alt+Left
 noremap <Esc>b <S-Left>
