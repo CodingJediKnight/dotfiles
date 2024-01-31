@@ -1,6 +1,10 @@
 # Dot Files
 Personal .files and config repo
 ## Install
+```bash
+mkdir -p "$HOME/code/reps/github.com/CodingJediKnight/" && cd "$_"
+git clone https://github.com/CodingJediKnight/dotfiles.git
+```
 * run `setup` file
 ## Mentioning
 ### Used repos
