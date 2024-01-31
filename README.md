@@ -7,7 +7,13 @@ git clone https://github.com/CodingJediKnight/dotfiles.git
 cd dotfiles
 ./setup 
 ```
-* run `setup` file
+
+## Features
+### Pomo
+```bash
+go install github.com/rwxrob/pomo/cmd/pomo@latest
+```
+
 ## Mentioning
 ### Used repos
 * https://github.com/rwxrob/dot

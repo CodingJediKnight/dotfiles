@@ -17,8 +17,9 @@
 true "${TARGETDIR:="$HOME/.local"}"
 
 # change this to your target (detecting not always reliable)
+GOARCH=$(dpkg --print-architecture)
 declare GOOS=linux
-declare GOARCH=amd64
+declare GOARCH
 
 lookup_file() {
 	curl -sSL "https://go.dev/dl/?mode=json" |

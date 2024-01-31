@@ -1,8 +1,5 @@
 #!/bin/sh
 
-exec brew install coreutils binutils diffutils ed findutils gawk gnu-indent gnu-sed gnu-tar gnu-which gnutls grep gzip screen tmux watch wdiff curl wget bash gdb gpatch m4 make file-formula git less openssh python rsync unzip vim gpg jq bash lynx golang gpg kubectl gh pandoc nmap
+brew install grep gzip tmux curl wget bash less openssh python rsync unzip vim bash lynx golang gh pandoc nmap jq watch
 
-echo "Now don't forget:"
-echo "  Add /usr/local/bin/bash to /etc/shells"
-echo "  Run chsh -s /usr/local/bin/bash"
-echo "  Use #!/usr/bin/env bash as shebang line"
+brew install --cask google-chrome iterm2 visual-studio-code dropbox docker postman telegram
