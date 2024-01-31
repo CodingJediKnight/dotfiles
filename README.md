@@ -4,6 +4,8 @@ Personal .files and config repo
 ```bash
 mkdir -p "$HOME/code/reps/github.com/CodingJediKnight/" && cd "$_"
 git clone https://github.com/CodingJediKnight/dotfiles.git
+cd dotfiles
+./setup 
 ```
 * run `setup` file
 ## Mentioning
