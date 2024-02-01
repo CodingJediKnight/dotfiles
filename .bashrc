@@ -23,7 +23,6 @@ _source_if() { [[ -r "$1" ]] && source "$1"; }
 export LANG=en_US.UTF-8 # assuming apt install language-pack-en done
 export USER="${USER:-$(whoami)}"
 export GITUSER="$USER"
-export FTP=242
 export TZ=Europe/Moscow
 export REPOS="$HOME/code/reps"
 export GHREPOS="$REPOS/github.com/CodingJediKnight"
@@ -235,9 +234,7 @@ unalias -a
 #alias tmux="env TERM=xterm-256color tmux"
 #alias tmux-new="tmux new-session -d -s $USER"
 #alias tmux-attach="tmux attach-session -t $USER"
-alias myip="dig myip.opendns.com @208.67.222.222"
 alias drips="docker ps -q | xargs -n 1 docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}} {{ .Name }}' | sed 's/ \// /'"
-alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 alias cdef='echo -e "\033]6;1;bg;*;default\a"'
 
 alias todo='vi ~/.todo'
