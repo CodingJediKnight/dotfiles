@@ -33,6 +33,9 @@ done
 
 ln -sf "$PWD/.profile" "$HOME/.bash_profile"
 
+[ ! -d ~/.ssh ] && mkdir ~/.ssh
+ln -sf "$PWD/.ssh_config" "$HOME/.ssh/config"
+
 for i in vim tmux lynx gh docker podman; do
   cd $i && ./setup
   cd -
