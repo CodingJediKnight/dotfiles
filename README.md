@@ -13,7 +13,17 @@ cd dotfiles
 ```bash
 go install github.com/rwxrob/pomo/cmd/pomo@latest
 ```
-
+### Fish
+```bash
+sudo apt install fish
+cd fish && ./setup
+curl -L https://get.oh-my.fish | fish
+chsh -s (which fish)
+```
+### Entr
+```bash
+entr bash -c 'clear; go run /tmp/main.go' <<< /tmp/main.go
+```
 ## Mentioning
 ### Used repos
 * https://github.com/rwxrob/dot
