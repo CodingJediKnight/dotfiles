@@ -20,8 +20,7 @@ pomo start
 ### Fish
 ```bash
 sudo apt install fish
-cd fish && ./setup
-curl -L https://get.oh-my.fish | fish
+./fish/setup
 set --universal fish_user_paths ~/.local/bin $fish_user_paths
 chsh -s (which fish)
 ```

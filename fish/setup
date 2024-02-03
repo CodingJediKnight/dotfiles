@@ -1,7 +1,12 @@
-#!/bin/sh
+#!/usr/bin/env bash
 set -e
+
+_have() { type "$1" &>/dev/null; }
+! _have fish && echo "requires fish" && exit 1
 
 ln -sf "$PWD/.config/fish" "$HOME/.config/fish"
 ln -sf "$PWD/.config/omf" "$HOME/.config/omf"
 ln -sf "$PWD/.config/ranger" "$HOME/.config/ranger"
 ln -sf "$PWD/.config/htop" "$HOME/.config/htop"
+
+curl -L https://get.oh-my.fish | fish
