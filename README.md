@@ -26,6 +26,7 @@ chsh -s (which fish)
 entr bash -c 'clear; go run /tmp/main.go' <<< /tmp/main.go
 ```
 ### Mods
+Check mods config file path first with `mods --settings`
 ```bash
 yq -i '
   .temp = 0.7 |
