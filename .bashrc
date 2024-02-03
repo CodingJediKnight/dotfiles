@@ -19,7 +19,7 @@ _source_if() { [[ -r "$1" ]] && source "$1"; }
 
 # ----------------------- environment variables ----------------------
 #                           (also see envx)
-
+export LANG=C.UTF8
 export USER="${USER:-$(whoami)}"
 export GITUSER="$USER"
 export TZ=Europe/Moscow
