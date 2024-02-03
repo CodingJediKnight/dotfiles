@@ -1,0 +1,17 @@
+#!/bin/sh
+set -e
+
+user=charmbracelet
+repo=mods
+
+arch=$(dpkg --print-architecture)
+
+latest="https://api.github.com/repos/$user/$repo/releases/latest"
+ver=$(curl -sS "$latest" | jq -r .zipball_url) && test -n "$ver"
+ver=${ver##*/}
+ver=${ver#v}
+deb="${repo}_${ver}_${arch}.deb"
+url="https://github.com/$user/$repo/releases/download/v${ver}/$deb"
+
+curl -sL "$url" -o "/tmp/$deb"
+sudo dpkg -i "/tmp/$deb"
