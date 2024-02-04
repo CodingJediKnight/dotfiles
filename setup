@@ -11,9 +11,7 @@ cd "$SCRIPT_ROOT_DIR" || exit
 ROOT_FILES='.bashrc
 .dircolors
 .inputrc
-.profile
-.gitconfig
-.gitattributes'
+.profile'
 
 for file in $ROOT_FILES; do
 	ROOT_FILE_PATH=$(readlink "${HOME}/$file")
@@ -30,6 +28,14 @@ for file in $ROOT_FILES; do
 
   ln -sf "$CURRENT_FILE_PATH" "$HOME_FILE_PATH"
 done
+
+if [ ! -e "${HOME}/.gitconfig" ]; then
+    cp "${PWD}/.gitconfig" "${HOME}/.gitconfig"
+fi
+
+if [ ! -e "${HOME}/.gitattributes" ]; then
+    cp "${PWD}/.gitattributes" "${HOME}/.gitattributes"
+fi
 
 ln -sf "$PWD/.profile" "$HOME/.bash_profile"
 
