@@ -147,10 +147,10 @@ noremap! <Char-0x4> <Del>
 inoremap <C-K> <C-o>d$
 
 " fn+Alt+Backspace
-inoremap <Esc>d <C-o>diw
+inoremap <Esc>d <C-o>dw
 
 " Alt+Backspace
-inoremap <Char-0x1b><Char-0x7f> <C-o>dvb
+inoremap <Char-0x1b><Char-0x7f> <C-o>db
 
 " Alt+Left
 noremap <Esc>b <S-Left>
