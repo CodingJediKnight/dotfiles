@@ -342,6 +342,12 @@ grep_highlight() {
 # for mac
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
+# for ubuntu
+[[ -r "/etc/bash_completion" ]] && . "/etc/bash_completion"
+
+# for redhat/fedora/rocky/alma
+[[ -r "/etc/profile.d/bash_completion.sh" ]] && . "/etc/profile.d/bash_completion.sh"
+
 owncomp=(
 	pdf zet keg kn yt gl auth pomo config live iam sshkey ws x clip
 	./build build b ./k8sapp k8sapp ./setup ./cmd run ./run

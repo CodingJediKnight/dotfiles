@@ -147,7 +147,7 @@ noremap! <Char-0x4> <Del>
 inoremap <C-K> <C-o>d$
 
 " fn+Alt+Backspace
-inoremap <Esc>d <C-o>dw
+" inoremap <Esc>d <C-o>dw " lagging Esc
 
 " Alt+Backspace
 inoremap <Char-0x1b><Char-0x7f> <C-o>db

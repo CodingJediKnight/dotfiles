@@ -2,12 +2,21 @@
 Personal .files and config repo
 
 ## Install
+### Main
 ```bash
 mkdir -p "$HOME/code/reps/github.com/CodingJediKnight/" && cd "$_"
 git clone https://github.com/CodingJediKnight/dotfiles.git && cd dotfiles
-./setup 
+./setup
 ```
-
+### Fish
+```bash
+brew install fish || sudo apt install fish
+cd $DOTFILES/fish/ && ./setup
+```
+```bash
+set --universal fish_user_paths ~/.local/bin $fish_user_paths
+chsh -s (which fish)
+```
 ## Features
 ### Pomo
 Pomo timer in tmux session
