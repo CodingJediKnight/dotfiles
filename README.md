@@ -18,6 +18,11 @@ set --universal fish_user_paths ~/.local/bin $fish_user_paths
 chsh -s (which fish)
 ```
 ## Features
+### Vim
+Don't forget to run
+```bash
+:PlugInstall
+```
 ### Pomo
 Pomo timer in tmux session
 ```bash
@@ -37,6 +42,7 @@ chsh -s (which fish)
 Cool things
 ```bash
 entr bash -c 'clear; go run /tmp/main.go' <<< /tmp/main.go
+entr bash -c 'clear; go run RunOnAny$' < <(ls **/*.go)
 ```
 ### Mods
 Check mods config file path first with `mods --settings`

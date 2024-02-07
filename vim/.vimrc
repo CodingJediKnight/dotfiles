@@ -89,7 +89,7 @@ set nowritebackup
 set icon
 
 " center the cursor always on the screen
-"set scrolloff=999
+set scrolloff=999
 
 " highlight search hits
 set hlsearch
@@ -352,6 +352,12 @@ nnoremap <C-L> :nohl<CR><C-L>
 " enable omni-completion
 set omnifunc=syntaxcomplete#Complete
 imap <tab><tab> <c-x><c-o>
+
+" If you prefer the Omni-Completion tip window to close when a selection is
+" made, these lines close it on movement in insert mode or when leaving
+" insert mode
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 " force some files to be specific file type
 au bufnewfile,bufRead $SNIPPETS/md/* set ft=pandoc
