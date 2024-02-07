@@ -230,9 +230,9 @@ _have setxkbmap && test -n "$DISPLAY" &&
 #      (use exec scripts instead, which work from vim and subprocs)
 
 unalias -a
-#alias tmux="env TERM=xterm-256color tmux"
-#alias tmux-new="tmux new-session -d -s $USER"
-#alias tmux-attach="tmux attach-session -t $USER"
+
+alias tmux-new="tmux new-session -d -s $USER"
+alias tmux-a="tmux attach-session -t $USER"
 alias drips="docker ps -q | xargs -n 1 docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}} {{ .Name }}' | sed 's/ \// /'"
 alias cdef='echo -e "\033]6;1;bg;*;default\a"'
 
@@ -293,12 +293,6 @@ new-from() {
 	cd "$name" || return 1
 }
 
-new-bonzai() { new-from rwxrob/bonzai-example "$1"; }
-new-cmd() { new-from rwxrob/template-bash-command "cmd-$1"; }
-cdz() { cd $(zet get "$@"); }
-
-export -f new-from new-bonzai new-cmd
-
 clone() {
 	local repo="$1" user
 	local repo="${repo#https://github.com/}"
@@ -342,16 +336,10 @@ grep_highlight() {
 # for mac
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
-# for ubuntu
-[[ -r "/etc/bash_completion" ]] && . "/etc/bash_completion"
-
-# for redhat/fedora/rocky/alma
-[[ -r "/etc/profile.d/bash_completion.sh" ]] && . "/etc/profile.d/bash_completion.sh"
-
 owncomp=(
-	pdf zet keg kn yt gl auth pomo config live iam sshkey ws x clip
+	pdf kn yt gl auth pomo config live iam sshkey ws x clip
 	./build build b ./k8sapp k8sapp ./setup ./cmd run ./run
-	foo ./foo cmds ./cmds z bonzai openapi obs
+	foo ./foo cmds ./cmds openapi
 )
 
 for i in "${owncomp[@]}"; do complete -C "$i" "$i"; done
