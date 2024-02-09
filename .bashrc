@@ -229,33 +229,7 @@ _have setxkbmap && test -n "$DISPLAY" &&
 # ------------------------------ aliases -----------------------------
 #      (use exec scripts instead, which work from vim and subprocs)
 
-unalias -a
-
-alias tmux-new="tmux new-session -d -s $USER"
-alias tmux-a="tmux attach-session -t $USER"
-alias drips="docker ps -q | xargs -n 1 docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}} {{ .Name }}' | sed 's/ \// /'"
-alias cdef='echo -e "\033]6;1;bg;*;default\a"'
-
-alias todo='vi ~/.todo'
-alias '?'=duck
-alias '??'=gpt
-alias '???'=google
-alias dot='cd $DOTFILES'
-alias scripts='cd $SCRIPTS'
-alias snippets='cd $SNIPPETS'
-alias ls='ls -h --color=auto'
-alias free='free -h'
-alias tree='tree -a'
-alias df='df -h'
-alias chmox='chmod +x'
-alias diff='diff --color'
-alias sshh='sshpass -f $HOME/.sshpass ssh '
-alias temp='cd $(mktemp -d)'
-alias view='vi -R' # which is usually linked to vim
-alias clear='printf "\e[H\e[2J"'
-alias c='printf "\e[H\e[2J"'
-alias more="less"
-
+_source_if "$HOME/.aliases"
 _have vim && alias vi=vim
 
 # ----------------------------- functions ----------------------------

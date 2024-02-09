@@ -4,7 +4,7 @@ Personal .files and config repo
 ## Install
 ### Main
 ```bash
-mkdir -p "$HOME/code/reps/github.com/CodingJediKnight/" && cd "$_"
+mkdir -p "$HOME/code/repos/github.com/CodingJediKnight/" && cd "$_"
 git clone https://github.com/CodingJediKnight/dotfiles.git && cd dotfiles
 ./setup
 ```

@@ -19,21 +19,10 @@ set -x BAT_STYLE "header-filename,header-filesize,grid"
 
 # export NNN_PLUG='f:finder;o:fzopen;p:mocq;d:diffs;t:nmount;v:imgview;i:preview-tui'
 # export NNN_FIFO=/tmp/nnn.fifo
+unalias -a
+[ -e ~/.aliases ]; and . ~/.aliases
 
-alias tmux="env TERM=xterm-256color tmux"
-alias tmux-new="tmux new-session -d -s $USER"
-alias tmux-a="tmux attach-session -t $USER"
-
-alias myip="dig myip.opendns.com @208.67.222.222"
-
-alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
-alias chmox="chmod +x"
-
-alias cdef='echo -e "\033]6;1;bg;*;default\a"'
-
-alias nnn="nnn -dHiUc -P i"
-
-alias l="exa --long --classify --group --icons --header"
+type vim &>/dev/null && alias vi=vim
 
 function ssh
 	command ssh $argv

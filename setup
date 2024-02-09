@@ -11,6 +11,7 @@ cd "$SCRIPT_ROOT_DIR" || exit
 ROOT_FILES='.bashrc
 .dircolors
 .inputrc
+.aliases
 .profile'
 
 for file in $ROOT_FILES; do
