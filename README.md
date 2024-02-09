@@ -31,13 +31,6 @@ pomo init
 pomo delete interval
 pomo start
 ```
-### Fish
-```bash
-sudo apt install fish
-./fish/setup
-set --universal fish_user_paths ~/.local/bin $fish_user_paths
-chsh -s (which fish)
-```
 ### Entr
 Cool things
 ```bash

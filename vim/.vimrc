@@ -138,6 +138,9 @@ set fo+=1   " don't break a line after a one-letter word
 " required for mac delete to work
 set backspace=indent,eol,start
 
+" Enable mouse mode (rewrite global tmux mouse mode)
+set mouse=a
+
 " specific key remap for Mac arrow moving
 " fn+Backspace
 noremap <Char-0x4> <Del>
@@ -420,14 +423,16 @@ nmap <F2> :call <SID>SynStack()<CR>
 set pastetoggle=<F3>
 map <F4> :set list!<CR>
 map <F5> :set cursorline!<CR>
+map <F6> :set scrolloff=0<CR>
+map <S-F6> :set scrolloff=999<CR>
 map <F7> :set spell!<CR>
 map <F12> :set fdm=indent<CR>
 
 nmap <leader>2 :set paste<CR>i
 
 " Better page down and page up
-noremap <C-n> <C-d>
-noremap <C-p> <C-b>
+"noremap <C-n> <C-d>
+"noremap <C-p> <C-b>
 
 " Set TMUX window name to name of file
 "au fileopened * !tmux rename-window TESTING

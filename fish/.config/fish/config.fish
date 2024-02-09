@@ -22,12 +22,12 @@ set -x BAT_STYLE "header-filename,header-filesize,grid"
 
 alias tmux="env TERM=xterm-256color tmux"
 alias tmux-new="tmux new-session -d -s $USER"
-alias tmux-attach="tmux attach-session -t $USER"
+alias tmux-a="tmux attach-session -t $USER"
 
 alias myip="dig myip.opendns.com @208.67.222.222"
 
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
-alias +x="chmod +x"
+alias chmox="chmod +x"
 
 alias cdef='echo -e "\033]6;1;bg;*;default\a"'
 
