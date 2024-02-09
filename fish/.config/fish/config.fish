@@ -19,8 +19,8 @@ set -x BAT_STYLE "header-filename,header-filesize,grid"
 
 # export NNN_PLUG='f:finder;o:fzopen;p:mocq;d:diffs;t:nmount;v:imgview;i:preview-tui'
 # export NNN_FIFO=/tmp/nnn.fifo
-unalias -a
 [ -e ~/.aliases ]; and . ~/.aliases
+alias temp='cd (mktemp -d)'
 
 type vim &>/dev/null && alias vi=vim
 

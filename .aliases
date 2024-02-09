@@ -7,9 +7,7 @@ alias drips="docker ps -q | xargs -n 1 docker inspect --format '{{range .Network
 alias cdef='echo -e "\033]6;1;bg;*;default\a"'
 
 alias todo='vi ~/.todo'
-alias '?'=duck
 alias '??'=gpt
-alias '???'=google
 alias dot='cd $DOTFILES'
 alias scripts='cd $SCRIPTS'
 alias snippets='cd $SNIPPETS'
@@ -20,7 +18,6 @@ alias df='df -h'
 alias chmox='chmod +x'
 alias diff='diff --color'
 alias sshh='sshpass -f $HOME/.sshpass ssh '
-alias temp='cd $(mktemp -d)'
 alias view='vi -R' # which is usually linked to vim
 alias clear='printf "\e[H\e[2J"'
 alias c='printf "\e[H\e[2J"'

@@ -8,7 +8,7 @@ mkdir -p "$HOME/code/repos/github.com/CodingJediKnight/" && cd "$_"
 git clone https://github.com/CodingJediKnight/dotfiles.git && cd dotfiles
 ./setup
 ```
-### Fish
+## Fish
 ```bash
 brew install fish || sudo apt install fish
 cd $DOTFILES/fish/ && ./setup
@@ -16,6 +16,21 @@ cd $DOTFILES/fish/ && ./setup
 ```bash
 set --universal fish_user_paths ~/.local/bin $fish_user_paths
 chsh -s (which fish)
+```
+### Font for fish
+```bash
+# MacOS
+brew tap homebrew/cask-fonts
+brew install font-hack-nerd-font
+# Ubuntu
+sudo apt install fontconfig
+curl -LO https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Hack.zip
+sudo mkdir /usr/local/share/fonts/Hack
+sudo unzip Hack.zip -d /usr/local/share/fonts/Hack/
+sudo fc-cache -fv
+rm Hack.zip
+# Windows
+# Just download and install https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Hack.zip
 ```
 ## Features
 ### Vim

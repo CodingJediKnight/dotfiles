@@ -230,6 +230,9 @@ _have setxkbmap && test -n "$DISPLAY" &&
 #      (use exec scripts instead, which work from vim and subprocs)
 
 _source_if "$HOME/.aliases"
+alias '?'=duck
+alias '???'=google
+alias temp='cd $(mktemp -d)'
 _have vim && alias vi=vim
 
 # ----------------------------- functions ----------------------------
