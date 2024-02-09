@@ -3,6 +3,7 @@
 
 alias tmux-new="tmux new-session -d -s $USER"
 alias tmux-a="tmux attach-session -t $USER"
+alias fix-tmux="tput cnorm"
 alias drips="docker ps -q | xargs -n 1 docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}} {{ .Name }}' | sed 's/ \// /'"
 alias cdef='echo -e "\033]6;1;bg;*;default\a"'
 
