@@ -263,6 +263,7 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   Plug 'vim-pandoc/vim-pandoc'
   Plug 'rwxrob/vim-pandoc-syntax-simple'
   Plug 'dense-analysis/ale'
+  Plug 'vim-scripts/ruscmd'
   call plug#end()
 
   let g:ale_sign_error = '☠'
