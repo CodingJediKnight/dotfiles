@@ -30,20 +30,6 @@ export DOTFILES="$GHREPOS/dotfiles"
 export SCRIPTS="$DOTFILES/scripts"
 export SNIPPETS="$DOTFILES/snippets"
 export HELP_BROWSER=lynx
-export DESKTOP="$HOME/Desktop"
-export DOCUMENTS="$HOME/Documents"
-export DOWNLOADS="$HOME/Downloads"
-export TEMPLATES="$HOME/Templates"
-export PUBLIC="$HOME/Public"
-export PRIVATE="$HOME/Private"
-export PICTURES="$HOME/Pictures"
-export MUSIC="$HOME/Music"
-export VIDEOS="$HOME/Videos"
-export PDFS="$HOME/usb/pdfs"
-export VIRTUALMACHINES="$HOME/VirtualMachines"
-export WORKSPACES="$HOME/Workspaces" # container home dirs for mounting
-export ZETDIR="$GHREPOS/zet"
-export ZETTELCASTS="$VIDEOS/ZettelCasts"
 export TERM=xterm-256color
 export HRULEWIDTH=73
 export EDITOR=vi
@@ -231,6 +217,7 @@ _have setxkbmap && test -n "$DISPLAY" &&
 
 _source_if "$HOME/.aliases"
 alias '?'=duck
+alias '??'=gpt
 alias '???'=google
 alias temp='cd $(mktemp -d)'
 _have vim && alias vi=vim
@@ -294,19 +281,19 @@ clone() {
 ssh() {
   command ssh $argv
 	echo -e "\033]6;1;bg;*;default\a"
-}
+} && export -f ssh
 
 is_ssh() {
   [ -n "$SSH_CONNECTION" ]; or [ -n "$SSH_CLIENT" ]; or [ -n "$SSH_TTY" ]
-}
+} && export -f is_ssh
 
 is_tmux() {
   [ -n "$TMUX" ]
-}
+} && export -f is_tmux
 
 grep_highlight() {
   grep --color=always -E "${argv}[1]|\$" "$argv"[2];
-}
+} && export -f grep_highlight
 
 # ------------- source external dependencies / completion ------------
 

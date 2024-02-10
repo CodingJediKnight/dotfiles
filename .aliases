@@ -8,7 +8,6 @@ alias drips="docker ps -q | xargs -n 1 docker inspect --format '{{range .Network
 alias cdef='echo -e "\033]6;1;bg;*;default\a"'
 
 alias todo='vi ~/.todo'
-alias '??'=gpt
 alias dot='cd $DOTFILES'
 alias scripts='cd $SCRIPTS'
 alias snippets='cd $SNIPPETS'

@@ -14,6 +14,7 @@ set -g default_user jedi
 set -g theme_date_format "+%Y-%m-%d %H:%M:%S"
 set -g theme_title_display_process yes
 set -g theme_show_exit_status yes
+set -g theme_display_hostname yes
 
 set -x BAT_STYLE "header-filename,header-filesize,grid"
 
@@ -21,6 +22,7 @@ set -x BAT_STYLE "header-filename,header-filesize,grid"
 # export NNN_FIFO=/tmp/nnn.fifo
 [ -e ~/.aliases ]; and . ~/.aliases
 alias temp='cd (mktemp -d)'
+alias '\?\?'=gpt
 
 type vim &>/dev/null && alias vi=vim
 

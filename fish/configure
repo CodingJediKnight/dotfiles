@@ -1,0 +1,35 @@
+#!/usr/bin/env fish
+
+# Env vars
+set -Ux USER "$USER"
+set -Ux GITUSER "$GITUSER"
+set -Ux REPOS "$REPOS"
+set -Ux GHREPOS "$GHREPOS"
+set -Ux GLREPOS "$GLREPOS"
+set -Ux SCRIPTS "$SCRIPTS"
+set -Ux SNIPPETS "$SNIPPETS"
+set -Ux HELP_BROWSER "$HELP_BROWSER"
+set -Ux TERM "$TERM"
+
+set -Ux HRULEWIDTH "$HRULEWIDTH"
+set -Ux EDITOR "$EDITOR"
+set -Ux VISUAL "$VISUAL"
+set -Ux EDITOR_PREFIX "$EDITOR_PREFIX"
+
+set -Ux GOPRIVATE "$GOPRIVATE"
+set -Ux GOBIN "$GOBIN"
+set -Ux GOPROXY "$GOPROXY"
+set -Ux CGO_ENABLED "$CGO_ENABLED"
+
+set -Ux VIMSPELL "$VIMSPELL"
+
+# PATH
+fish_add_path "$HOME/.local/bin"
+fish_add_path "$HOME/.local/go/bin"
+fish_add_path "/usr/local/go/bin"
+fish_add_path "/usr/local/bin"
+fish_add_path "$SCRIPTS"
+
+fish_add_path "/Applications/GoLand.app/Contents/MacOS"
+
+chsh -s (which fish)

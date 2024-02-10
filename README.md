@@ -12,10 +12,8 @@ git clone https://github.com/CodingJediKnight/dotfiles.git && cd dotfiles
 ```bash
 brew install fish || sudo apt install fish
 cd $DOTFILES/fish/ && ./setup
-```
-```bash
-set --universal fish_user_paths ~/.local/bin $fish_user_paths
-chsh -s (which fish)
+# then in fish env
+cd $DOTFILES/fish/ && ./configure
 ```
 ### Font for fish
 ```bash
