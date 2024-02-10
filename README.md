@@ -36,6 +36,10 @@ Don't forget to run
 ```bash
 :PlugInstall
 ```
+Install Russian spellcheck
+```bash
+:set spelllang=ru
+```
 ### Pomo
 Pomo timer in tmux session
 ```bash
