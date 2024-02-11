@@ -11,22 +11,26 @@ git clone https://github.com/CodingJediKnight/dotfiles.git && cd dotfiles
 ### Fresh Ubuntu
 Install all:
 ```bash
-dot && ./install/ubuntu/install-all
+dot && cd install/ubuntu/
+./install-all
 ```
 Or install per service:
 ```bash
-dot && ./install/ubuntu/install-most-stuff-with-apt
+dot && cd install/ubuntu/
+./install-most-stuff-with-apt
 # ./install/ubuntu/install-...
 # ...
 ```
 ### Fresh macOS
 Install all:
 ```bash
-dot && ./install/mac/install-all
+dot && cd install/mac/
+./install-all
 ```
 Or install per service:
 ```bash
-dot && ./install/mac/install-most-stuff-with-brew
+dot && cd install/mac/
+./install-most-stuff-with-brew
 # ./install/mac/install-...
 # ...
 ```

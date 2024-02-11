@@ -8,4 +8,5 @@
 ./install-docker
 ./install-docker-compose
 ./install-hyperfine
-../install-go-tools
+cd ..
+./install-go-tools
