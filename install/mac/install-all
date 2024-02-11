@@ -1,5 +1,3 @@
 #!/bin/sh
 
 ./install-most-stuff-with-brew
-cd ..
-./install-go-tools

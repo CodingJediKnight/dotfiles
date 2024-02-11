@@ -34,6 +34,13 @@ dot && cd install/mac/
 # ./install/mac/install-...
 # ...
 ```
+### Install Go tools
+Check if you have all env vars after instilling Go.
+Or you can just `bash -l` before run script.
+```bash
+dot && cd install/
+./install-go-tools
+```
 ## Fish
 Install:
 ```bash
@@ -70,6 +77,22 @@ Install Russian spellcheck
 ```bash
 :set spelllang=ru
 ```
+### GPT (Mods)
+Check mods config file path first with `mods --settings`
+
+```bash
+baseUrl="localhost:5000/v1" # write your own OpenAI ChatGPT API entry
+```
+```bash
+yq -i "
+  .temp = 0.7 |
+  .topp = 0.7 |
+  .max-input-chars = 24500 |
+  .max-tokens = 2048 |
+  .apis.cjk-gpt.base-url = \"$baseUrl\" |
+  .apis.cjk-gpt.models.gpt.max-input-chars = 24500
+" ~/.config/mods/mods.yml
+```
 ### Pomo
 Pomo timer in tmux session
 ```bash
@@ -83,22 +106,6 @@ Cool things
 ```bash
 entr bash -c 'clear; go run /tmp/main.go' <<< /tmp/main.go
 entr bash -c 'clear; go run RunOnAny$' < <(ls **/*.go)
-```
-### GPT (Mods)
-Check mods config file path first with `mods --settings`
-
-```bash
-baseUrl="localhost:5000/v1"
-```
-```bash
-yq -i '
-  .temp = 0.7 |
-  .topp = 0.7 |
-  .max-input-chars = 24500 |
-  .max-tokens = 2048 |
-  .apis.cjk-gpt.base-url = "$baseUrl" |
-  .apis.cjk-gpt.models.gpt.max-input-chars = 24500
-' ~/.config/mods/mods.yml
 ```
 
 ## Mentioning
