@@ -2,20 +2,46 @@
 Personal .files and config repo
 
 ## Install
-### Main
+### Init
 ```bash
 mkdir -p "$HOME/code/repos/github.com/CodingJediKnight/" && cd "$_"
 git clone https://github.com/CodingJediKnight/dotfiles.git && cd dotfiles
 ./setup
 ```
+### Fresh Ubuntu
+Install all:
+```bash
+dot && ./install/ubuntu/install-all
+```
+Or install per service:
+```bash
+dot && ./install/ubuntu/install-most-stuff-with-apt
+# ./install/ubuntu/install-...
+# ...
+```
+### Fresh macOS
+Install all:
+```bash
+dot && ./install/mac/install-all
+```
+Or install per service:
+```bash
+dot && ./install/mac/install-most-stuff-with-brew
+# ./install/mac/install-...
+# ...
+```
 ## Fish
+Install:
 ```bash
 brew install fish || sudo apt install fish
 cd $DOTFILES/fish/ && ./setup
-# then in fish env
+```
+Then configure in fish terminal
+```bash
 cd $DOTFILES/fish/ && ./configure
 ```
 ### Font for fish
+You need to install Hack font in your system and use to your terminal emu.
 ```bash
 # MacOS
 brew tap homebrew/cask-fonts
@@ -54,15 +80,19 @@ Cool things
 entr bash -c 'clear; go run /tmp/main.go' <<< /tmp/main.go
 entr bash -c 'clear; go run RunOnAny$' < <(ls **/*.go)
 ```
-### Mods
+### GPT (Mods)
 Check mods config file path first with `mods --settings`
+
+```bash
+baseUrl="localhost:5000/v1"
+```
 ```bash
 yq -i '
   .temp = 0.7 |
   .topp = 0.7 |
   .max-input-chars = 24500 |
   .max-tokens = 2048 |
-  .apis.cjk-gpt.base-url = "localhost:5000/v1" |
+  .apis.cjk-gpt.base-url = "$baseUrl" |
   .apis.cjk-gpt.models.gpt.max-input-chars = 24500
 ' ~/.config/mods/mods.yml
 ```

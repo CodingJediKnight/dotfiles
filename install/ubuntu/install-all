@@ -1,0 +1,11 @@
+#!/bin/sh
+
+./install-most-stuff-with-apt
+./install-go
+./install-gh
+./install-pandoc
+./install-yq
+./install-docker
+./install-docker-compose
+./install-hyperfine
+../install-go-tools
