@@ -1,5 +1,5 @@
 #!/bin/sh
 brew update && brew upgrade
 brew tap homebrew/cask-fonts
-brew install grep gzip tmux curl wget bash less openssh python rsync unzip vim bash lynx golang gh pandoc nmap jq yq watch font-hack-nerd-font
-brew install --cask google-chrome iterm2 visual-studio-code dropbox docker postman telegram
+brew install grep gzip tmux curl wget tree bash less openssh python rsync unzip vim bash lynx golang gh pandoc nmap jq yq watch font-hack-nerd-font
+brew install --cask google-chrome iterm2 visual-studio-code dropbox yandex-disk google-drive docker postman telegram discord transmission vlc iina pgadmin4 keyboardcleantool openvpn-connect zoom betterzip usb-overdrive anydesk dbeaver-community podman-desktop
