@@ -4,7 +4,9 @@ set -e
 _have() { type "$1" &>/dev/null; }
 ! _have fish && echo "requires fish" && exit 1
 
-ln -sf "$PWD/.config/fish" "$HOME/.config/fish"
+[ ! -d "$HOME/.config/fish/functions" ] && mkdir "$HOME/.config/fish/functions"
+ln -sf "$PWD/.config/fish/config.fish" "$HOME/.config/fish/config.fish"
+ln -sf "$PWD/.config/fish/functions/ranger.fish" "$HOME/.config/fish/functions/ranger.fish"
 ln -sf "$PWD/.config/omf" "$HOME/.config/omf"
 ln -sf "$PWD/.config/ranger" "$HOME/.config/ranger"
 ln -sf "$PWD/.config/htop" "$HOME/.config/htop"
