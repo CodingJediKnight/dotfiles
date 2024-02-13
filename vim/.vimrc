@@ -391,6 +391,9 @@ au bufnewfile,bufRead *.go set spell spellcapcheck=0
 au bufnewfile,bufRead commands.yaml set spell
 au bufnewfile,bufRead *.txt set spell
 
+" checking ru spelling
+set spelllang=ru,en
+
 "fix bork bash detection
 if has("eval")  " vim-tiny detection
 fun! s:DetectBash()
