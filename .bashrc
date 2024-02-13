@@ -21,10 +21,10 @@ _source_if() { [[ -r "$1" ]] && source "$1"; }
 #                           (also see envx)
 export LANG=C.UTF8
 export USER="${USER:-$(whoami)}"
-export GITUSER="$USER"
+export GITUSER="CodingJediKnight"
 export TZ=Europe/Moscow
 export REPOS="$HOME/code/repos"
-export GHREPOS="$REPOS/github.com/CodingJediKnight"
+export GHREPOS="$REPOS/github.com/$GITUSER"
 export GLREPOS="$REPOS/gitlab.com/JediKnight"
 export DOTFILES="$GHREPOS/dotfiles"
 export SCRIPTS="$DOTFILES/scripts"
@@ -230,53 +230,8 @@ _have vim && alias vi=vim
 #   done < <(env | grep LESS_TERM)
 # } && export -f lesscoloroff
 
-envx() {
-	local envfile="${1:-"$HOME/.env"}"
-	[[ ! -e "$envfile" ]] && echo "$envfile not found" && return 1
-	while IFS= read -r line; do
-		name=${line%%=*}
-		value=${line#*=}
-		[[ -z "${name}" || $name =~ ^# ]] && continue
-		export "$name"="$value"
-	done <"$envfile"
-} && export -f envx
-
-[[ -e "$HOME/.env" ]] && envx "$HOME/.env"
-
-new-from() {
-	local template="$1"
-	local name="$2"
-	! _have gh && echo "gh command not found" && return 1
-	[[ -z "$name" ]] && echo "usage: $0 <name>" && return 1
-	[[ -z "$GHREPOS" ]] && echo "GHREPOS not set" && return 1
-	[[ ! -d "$GHREPOS" ]] && echo "Not found: $GHREPOS" && return 1
-	cd "$GHREPOS" || return 1
-	[[ -e "$name" ]] && echo "exists: $name" && return 1
-	gh repo create -p "$template" --public "$name"
-	gh repo clone "$name"
-	cd "$name" || return 1
-}
-
-clone() {
-	local repo="$1" user
-	local repo="${repo#https://github.com/}"
-	local repo="${repo#git@github.com:}"
-	if [[ $repo =~ / ]]; then
-		user="${repo%%/*}"
-	else
-		user="$GITUSER"
-		[[ -z "$user" ]] && user="$USER"
-	fi
-	local name="${repo##*/}"
-	local userd="$REPOS/github.com/$user"
-	local path="$userd/$name"
-	[[ -d "$path" ]] && cd "$path" && return
-	mkdir -p "$userd"
-	cd "$userd"
-	echo gh repo clone "$user/$name" -- --recurse-submodule
-	gh repo clone "$user/$name" -- --recurse-submodule
-	cd "$name"
-} && export -f clone
+# load ~/.env
+envx
 
 ssh() {
   command ssh $argv
