@@ -107,6 +107,14 @@ pomo init
 pomo delete interval
 pomo start
 ```
+### Figlet
+```bash
+figlet -f slant Jedi | lolcat
+```
+[More Fonts](https://github.com/xero/figlet-fonts)
+```bash
+figlet -f "${FIGL_FONT:-future}" Text
+```
 ### Entr
 Cool things
 ```bash
