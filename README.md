@@ -8,6 +8,11 @@ mkdir -p "$HOME/code/repos/github.com/CodingJediKnight/" && cd "$_"
 git clone https://github.com/CodingJediKnight/dotfiles.git && cd dotfiles
 ./setup
 ```
+Create `~/.bash_presonal`, `~/.bash_private` or `~/.bash_work` to change settings.
+For example:
+```bash
+export LANG="en_US.UTF-8"
+```
 ### Fresh Ubuntu
 Install all:
 ```bash
@@ -51,6 +56,7 @@ Then configure in fish terminal
 ```bash
 cd $DOTFILES/fish/ && ./configure
 ```
+Create `~/.localrc` to change settings.
 ### Font for fish
 You need to install Hack font in your system and use to your terminal emu.
 ```bash
