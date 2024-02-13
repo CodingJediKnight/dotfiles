@@ -224,17 +224,17 @@ _have vim && alias vi=vim
 
 # ----------------------------- functions ----------------------------
 
-# lesscoloroff() {
-#   while IFS= read -r line; do
-#     unset ${line%%=*}
-#   done < <(env | grep LESS_TERM)
-# } && export -f lesscoloroff
+lesscoloroff() {
+  while IFS= read -r line; do
+    unset ${line%%=*}
+  done < <(env | grep LESS_TERM)
+} && export -f lesscoloroff
 
 # load ~/.env
 envx
 
 ssh() {
-  command ssh $argv
+  command ssh "$@"
 	echo -e "\033]6;1;bg;*;default\a"
 } && export -f ssh
 
@@ -247,7 +247,7 @@ is_tmux() {
 } && export -f is_tmux
 
 grep_highlight() {
-  grep --color=always -E "${argv}[1]|\$" "$argv"[2];
+  grep --color=always -E "$1|\$" "$2";
 } && export -f grep_highlight
 
 # ------------- source external dependencies / completion ------------
