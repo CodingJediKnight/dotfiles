@@ -1,5 +1,5 @@
 #!/bin/sh
 
-sudo apt install -y curl wget tmux tree vim nmap jq pcregrep lynx make uidmap ruby python-is-python3 libcurses-perl figlet build-essential libncurses-dev autoconf entr git-lfs shellcheck htop ranger lolcat
+sudo apt-get install -y curl wget tmux tree vim nmap jq pcregrep lynx make uidmap ruby python-is-python3 libcurses-perl figlet build-essential libncurses-dev autoconf entr git-lfs shellcheck htop ranger lolcat
 git lfs install
 sudo cpan -I Term::Animation
