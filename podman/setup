@@ -1,3 +1,4 @@
 #!/bin/sh
 mkdir -p ~/.local/share/podman
+# curl -sSL https://raw.githubusercontent.com/containers/podman/main/completions/bash/podman -o "$PWD/completion"
 ln -fs "$PWD/completion" ~/.local/share/podman/completion

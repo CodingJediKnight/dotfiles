@@ -1,3 +1,4 @@
 #!/bin/sh
 mkdir -p ~/.local/share/docker
+# curl -sSL https://raw.githubusercontent.com/docker/docker-ce/master/components/cli/contrib/completion/bash/docker -o "$PWD/completion"
 ln -fs "$PWD/completion" ~/.local/share/docker/completion

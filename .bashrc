@@ -264,7 +264,9 @@ grep_highlight() {
 # ------------- source external dependencies / completion ------------
 
 # for mac
-[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+#[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+_have brew && [[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && \
+    . "$(brew --prefix)/etc/profile.d/bash_completion.sh"
 
 owncomp=(
 	pdf kn yt gl auth pomo config live iam sshkey ws x clip
