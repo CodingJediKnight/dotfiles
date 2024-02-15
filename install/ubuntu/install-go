@@ -17,8 +17,9 @@
 true "${TARGETDIR:="$HOME/.local"}"
 
 # change this to your target (detecting not always reliable)
+GOOS=$(uname -s | tr '[:upper:]' '[:lower:]')
 GOARCH=$(dpkg --print-architecture)
-declare GOOS=linux
+declare GOOS
 declare GOARCH
 
 lookup_file() {

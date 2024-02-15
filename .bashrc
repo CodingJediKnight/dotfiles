@@ -114,6 +114,7 @@ pathprepend() {
 pathprepend \
 	"$HOME/.local/bin" \
 	"$HOME/.local/go/bin" \
+	"$HOME/go/bin" \
 	"$HOME/.nimble/bin" \
 	"$GHREPOS/cmd-"* \
 	/usr/local/go/bin \
@@ -191,8 +192,8 @@ __ps1() {
 	[[ -n "$B" ]] && B="$g($b$B$g)"
 
 	short="$u\u$g$PROMPT_AT$h\h$g:$w$dir$B$p$P$x "
-	long="$g╔ $u\u$g$PROMPT_AT$h\h$g:$w$dir$B\n$g╚ $p$P$x "
-	double="$g╔ $u\u$g$PROMPT_AT$h\h$g:$w$dir\n$g║ $B\n$g╚ $p$P$x "
+	long="${g}╔ $u\u$g$PROMPT_AT$h\h$g:$w$dir$B\n${g}╚ $p$P$x "
+	double="${g}╔ $u\u$g$PROMPT_AT$h\h$g:$w$dir\n${g}║ $B\n${g}╚ $p$P$x "
 
 	if ((${#countme} > PROMPT_MAX)); then
 		PS1="$double"
@@ -230,8 +231,18 @@ lesscoloroff() {
   done < <(env | grep LESS_TERM)
 } && export -f lesscoloroff
 
-# load ~/.env
-envx
+envx() {
+	local envfile="${1:-"$HOME/.env"}"
+	[[ ! -e "$envfile" ]] && echo "$envfile not found" && return 1
+	while IFS= read -r line; do
+		name=${line%%=*}
+		value=${line#*=}
+		[[ -z "${name}" || $name =~ ^# ]] && continue
+		export "$name"="$value"
+	done <"$envfile"
+} && export -f envx
+
+[[ -e "$HOME/.env" ]] && envx "$HOME/.env"
 
 ssh() {
   command ssh "$@"
