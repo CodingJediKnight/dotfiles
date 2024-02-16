@@ -2,7 +2,7 @@
 Personal .files and config repo
 
 ## Install
-### Init
+### Init Unix
 ```bash
 mkdir -p "$HOME/code/repos/github.com/CodingJediKnight/" && cd "$_"
 git clone https://github.com/CodingJediKnight/dotfiles.git && cd dotfiles
@@ -12,6 +12,14 @@ Create `~/.bash_presonal`, `~/.bash_private` or `~/.bash_work` to change setting
 For example:
 ```bash
 export LANG="en_US.UTF-8"
+```
+### Init Windows
+Use git bash
+```bash
+cd ~
+curl -sSLO https://raw.githubusercontent.com/CodingJediKnight/dotfiles/main/install/windows/setup.sh
+./setup.sh
+rm setup.sh
 ```
 ### Fresh Ubuntu
 Install all:
