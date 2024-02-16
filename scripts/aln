@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 shopt -s extglob
 
 # (ripped from deyloop)
@@ -6,7 +6,7 @@ shopt -s extglob
 # Aligns input lines so that the occurrence of given character(s) matches up
 # among the lines
 #
-# example: 
+# example:
 #
 # get this_variable = whatever
 # get whatever= this_thing
@@ -45,7 +45,7 @@ _aln() {
     # characters proceeding the alignment point
     lines_post["$i"]="${line#*$char}"
 
-    i=$(( i + 1 ))  
+    i=$(( i + 1 ))
   done
 
   max_len=$(( max_len + 1 ))

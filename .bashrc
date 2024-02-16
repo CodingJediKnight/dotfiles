@@ -114,7 +114,6 @@ pathprepend() {
 pathprepend \
 	"$HOME/.local/bin" \
 	"$HOME/.local/go/bin" \
-	"$HOME/go/bin" \
 	"$HOME/.nimble/bin" \
 	"$GHREPOS/cmd-"* \
 	/usr/local/go/bin \

@@ -1,9 +1,9 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 list () {
     gl list
     # FIXME have it work for anyone
-    for i in skilstak rwxrob afkworks essential-web pegn soil; do 
+    for i in skilstak rwxrob afkworks essential-web pegn soil; do
         gh repos $i
     done
 }
@@ -32,15 +32,15 @@ has () {
         return
     fi
     if [[ $what =~ / ]];then
-        find $(path) -path "*$what" 
+        find $(path) -path "*$what"
         return
     fi
-    find $(path) -name "$what" 
+    find $(path) -name "$what"
 }
 
 hascmd () {
     local things=$(has "$@")
-    for this in ${things[@]}; do 
+    for this in ${things[@]}; do
         if [[ -x $this && ! -d $this ]]; then
             echo "${this}"
         fi
@@ -74,7 +74,7 @@ done
 
 # remember COMP_LINE is changed by shift
 if [ -n "${COMP_LINE}" ]; then
-    for cmd in ${commands[@]}; do 
+    for cmd in ${commands[@]}; do
         [[ "${cmd:0:${#1}}" == "$1" ]] && echo "${cmd}"
     done
     exit 0
