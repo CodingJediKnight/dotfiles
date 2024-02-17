@@ -1,6 +1,6 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
-    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "$schema": "https://aka.ms/terminal-profiles-schema-preview",
     "actions":
     [
         {
@@ -10,6 +10,13 @@
                 "input": "cd ..\r"
             },
             "keys": "ctrl+up"
+        },
+        {
+            "command":
+            {
+                "action": "globalSummon"
+            },
+            "keys": "sc(41)"
         },
         {
             "command":
@@ -24,10 +31,6 @@
             "keys": "ctrl+v"
         },
         {
-            "command": "find",
-            "keys": "ctrl+shift+f"
-        },
-        {
             "command":
             {
                 "action": "splitPane",
@@ -37,11 +40,8 @@
             "keys": "alt+shift+d"
         },
         {
-            "command":
-            {
-                "action": "globalSummon"
-            },
-            "keys": "sc(41)"
+            "command": "find",
+            "keys": "ctrl+shift+f"
         }
     ],
     "copyFormatting": "none",
@@ -64,10 +64,10 @@
             "bellStyle": "none",
             "closeOnExit": "always",
             "colorScheme": "Gruvbox",
-            "cursorShape": "bar",
+            "cursorShape": "filledBox",
             "font":
             {
-                "face": "Ubuntu Mono",
+                "face": "Hack Nerd Font Mono",
                 "size": 26.0,
                 "weight": "normal"
             },
@@ -391,49 +391,5 @@
             "yellow": "#808000"
         }
     ],
-    "themes":
-    [
-        {
-            "name": "legacyDark",
-            "tab":
-            {
-                "background": null,
-                "showCloseButton": "always",
-                "unfocusedBackground": null
-            },
-            "window":
-            {
-                "applicationTheme": "dark",
-                "useMica": false
-            }
-        },
-        {
-            "name": "legacyLight",
-            "tab":
-            {
-                "background": null,
-                "showCloseButton": "always",
-                "unfocusedBackground": null
-            },
-            "window":
-            {
-                "applicationTheme": "light",
-                "useMica": false
-            }
-        },
-        {
-            "name": "legacySystem",
-            "tab":
-            {
-                "background": null,
-                "showCloseButton": "always",
-                "unfocusedBackground": null
-            },
-            "window":
-            {
-                "applicationTheme": "system",
-                "useMica": false
-            }
-        }
-    ]
+    "themes": []
 }
