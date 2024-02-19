@@ -1,0 +1,6 @@
+#!/bin/sh
+
+reset="\e[0m"
+color="\e[38;5;122m"
+
+printf "$color$(hostname | figlet -c -f slant)$reset"

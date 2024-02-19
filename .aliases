@@ -17,6 +17,7 @@ alias tree='tree -a'
 alias df='df -h'
 alias chmox='chmod +x'
 alias diff='diff --color'
+alias grep='grep --color=always -E'
 alias sshh='sshpass -f $HOME/.sshpass ssh '
 alias view='vi -R' # which is usually linked to vim
 alias clear='printf "\e[H\e[2J"'
