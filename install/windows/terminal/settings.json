@@ -16,7 +16,7 @@
             {
                 "action": "globalSummon"
             },
-            "keys": "sc(41)"
+            "keys": "Alt+sc(41)"
         },
         {
             "command":

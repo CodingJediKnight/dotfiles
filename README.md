@@ -123,6 +123,11 @@ figlet -f slant Jedi | lolcat
 ```bash
 figlet -f "${FIGL_FONT:-future}" Text
 ```
+Hostname on enter ssh
+```bash
+scripts
+sudo bash -c "cat ./hostnamefiglet > /etc/update-motd.d/10-help-text"
+```
 ### Entr
 Cool things
 ```bash
