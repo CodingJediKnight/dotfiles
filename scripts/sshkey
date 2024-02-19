@@ -13,7 +13,7 @@ gen() {
 pub() {
   name="${1:-id_ed25519}"
   test -e "${confd}/${name}.pub" || return 1
-  cat "${confd}/${name}.pub"
+  cat "${confd}/${name}.pub" | tee /dev/tty | pbcopy 2>/dev/null
 }
 
 list() {
