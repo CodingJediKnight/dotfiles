@@ -434,6 +434,9 @@ map <F12> :set fdm=indent<CR>
 
 nmap <leader>2 :set paste<CR>i
 
+" Prevent exiting on Control-z
+nmap <C-Z> <CR>
+
 " Better page down and page up
 "noremap <C-n> <C-d>
 "noremap <C-p> <C-b>
