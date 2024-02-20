@@ -244,6 +244,41 @@ envx() {
 
 [[ -e "$HOME/.env" ]] && envx "$HOME/.env"
 
+new-from() {
+	local template="$1"
+	local name="$2"
+	! _have gh && echo "gh command not found" && return 1
+	[[ -z "$name" ]] && echo "usage: $0 <name>" && return 1
+	[[ -z "$GHREPOS" ]] && echo "GHREPOS not set" && return 1
+	[[ ! -d "$GHREPOS" ]] && echo "Not found: $GHREPOS" && return 1
+	cd "$GHREPOS" || return 1
+	[[ -e "$name" ]] && echo "exists: $name" && return 1
+	gh repo create -p "$template" --public "$name"
+	gh repo clone "$name"
+	cd "$name" || return 1
+}
+
+clone() {
+	local repo="$1" user
+	local repo="${repo#https://github.com/}"
+	local repo="${repo#git@github.com:}"
+	if [[ $repo =~ / ]]; then
+		user="${repo%%/*}"
+	else
+		user="$GITUSER"
+		[[ -z "$user" ]] && user="$USER"
+	fi
+	local name="${repo##*/}"
+	local userd="$REPOS/github.com/$user"
+	local path="$userd/$name"
+	[[ -d "$path" ]] && cd "$path" && return
+	mkdir -p "$userd"
+	cd "$userd"
+	echo gh repo clone "$user/$name" -- --recurse-submodule
+	gh repo clone "$user/$name" -- --recurse-submodule
+	cd "$name"
+} && export -f clone
+
 ssh() {
   command ssh "$@"
 	echo -e "\033]6;1;bg;*;default\a"
