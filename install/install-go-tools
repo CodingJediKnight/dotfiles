@@ -3,4 +3,4 @@
 go install -v github.com/rwxrob/pomo/cmd/pomo@latest
 go install -v github.com/charmbracelet/mods@latest
 go install -v github.com/charmbracelet/glow@latest
-go install -v github.com/raviqqe/muffet/v2@latest
+go install -v github.com/jesseduffield/lazygit@latest
