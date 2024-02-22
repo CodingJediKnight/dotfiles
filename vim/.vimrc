@@ -39,7 +39,7 @@ set showmode
 " disable visual bell (also disable in .inputrc)
 set t_vb=
 
-let mapleader=","
+let mapleader=" "
 
 set softtabstop=2
 
@@ -143,8 +143,7 @@ set mouse=a
 
 " specific key remap for Mac arrow moving
 " fn+Backspace
-noremap <Char-0x4> <Del>
-noremap! <Char-0x4> <Del>
+inoremap <Char-0x4> <Del>
 
 " fn+CMD+Backspace
 inoremap <C-K> <C-o>d$
@@ -164,6 +163,43 @@ inoremap <Esc>b <C-o>b
 noremap <Esc>f <S-Right>
 noremap! <Esc>f <S-Right>
 inoremap <Esc>f <C-o>w
+
+" ThePrimeagen remaps
+nnoremap <leader>pv :Ex<CR>
+nnoremap <leader>u :UndotreeShow<CR>
+
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+
+xnoremap <leader>p "_dP
+
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
+nnoremap <leader>Y "+Y
+
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
+
+" Prevent exiting on Control-z
+nnoremap Q <nop>
+noremap <C-Z> <nop>
+
+noremap <C-F> <cmd>silent !tmux neww tmux-sessionizer<CR>
+
+noremap <C-k> <cmd>cnext<CR>zz
+noremap <C-j> <cmd>cprev<CR>zz
+noremap <leader>k <cmd>lnext<CR>zz
+noremap <leader>j <cmd>lprev<CR>zz
+
+noremap <leader>s :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
+noremap <leader>x <cmd>!chmod +x %<CR>
 
 " stop complaints about switching buffer with changes
 set hidden
@@ -433,9 +469,6 @@ map <F7> :set spell!<CR>
 map <F12> :set fdm=indent<CR>
 
 nmap <leader>2 :set paste<CR>i
-
-" Prevent exiting on Control-z
-nmap <C-Z> <CR>
 
 " Better page down and page up
 "noremap <C-n> <C-d>

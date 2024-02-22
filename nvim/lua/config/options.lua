@@ -15,10 +15,6 @@ opt.spell = false
 opt.foldmethod = "manual"
 opt.foldenable = false
 
--- colorschemes
--- require('gruvbox-material').setup()
--- o.termguicolors = true
--- opt.gruvbox_material_enable_italic_comment = 1
 -- undo
 -- vim.opt.undodir = vim.fn.expand('~/.nvim/undodir')
 
