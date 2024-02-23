@@ -16,7 +16,7 @@
             {
                 "action": "globalSummon"
             },
-            "keys": "Alt+sc(41)"
+            "keys": "alt+sc(41)"
         },
         {
             "command":
@@ -68,7 +68,7 @@
             "font":
             {
                 "face": "Hack Nerd Font Mono",
-                "size": 26.0,
+                "size": 20.0,
                 "weight": "normal"
             },
             "startingDirectory": "%USERPROFILE%",
