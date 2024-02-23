@@ -31,6 +31,7 @@ return {
       vim.g.gruvbox_material_diagnostic_virtual_text = "colored"
       vim.g.gruvbox_material_visual = "red background"
       vim.g.gruvbox_material_better_performance = 1
+      vim.g.gruvbox_material_disable_italic_comment = 1
       vim.cmd.colorscheme("gruvbox-material")
     end,
   },

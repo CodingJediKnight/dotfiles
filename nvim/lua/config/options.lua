@@ -4,9 +4,6 @@
 
 local opt = vim.opt
 
--- try this: vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
---
-
 opt.ignorecase = true
 
 -- pandoc related
@@ -25,7 +22,6 @@ opt.scrolloff = 8
 opt.linebreak = true
 
 -- indentation
-
 -- o.expandtab = true              -- convert tabs to spaces
 -- o.tabstop = 4                   -- insert 4 spaces for a tab
 -- o.shiftwidth = 4                -- the number of spaces inserted for each indentation
@@ -39,7 +35,6 @@ opt.linebreak = true
 -- vim.o.timeoutlen = 300 -- time to wait for a mapped sequence to complete
 --
 -- g.vim_markdown_conceal = 0
---
 --
 -- opt.vim_markdown_conceal = 0
 --
