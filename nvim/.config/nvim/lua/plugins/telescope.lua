@@ -26,17 +26,4 @@ return {
   {
     "nvim-telescope/telescope-symbols.nvim",
   },
-
-  -- Custom ripgrep configuration:
-
-  -- I want to search in hidden/dot files.
-  -- "--hidden"
-  --
-  -- I don't want to search in the `.git` directory.
-  -- "--glob")
-  -- "!**/.git/*")
-  --
-  --  I want to follow symbolic links
-  -- "-L"
-  --
 }
