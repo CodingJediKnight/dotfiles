@@ -1,14 +1,9 @@
 return {
-  --   {
-  --      "mfussenegger/nvim-dap",
-  --   },
-  --   {
-  --     "theHamsta/nvim-dap-virtual-text",
-  --   },
-  --   {
-  --     "rcarriga/nvim-dap-ui",
-  --   },
-  {
+    --{ "mfussenegger/nvim-dap" },
+    --{ "rcarriga/nvim-dap-ui" },
+    --{ "theHamsta/nvim-dap-virtual-text" },
+    --{ "nvim-telescope/telescope-dap.nvim" },
+    {
     "ray-x/go.nvim",
     dependencies = { -- optional packages
       "ray-x/guihua.lua",
