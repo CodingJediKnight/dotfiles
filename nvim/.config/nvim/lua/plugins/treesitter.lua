@@ -22,7 +22,6 @@ return {
         "php",
         "phpdoc",
         "sql",
-        "comment",
         "css",
         "dockerfile",
         "diff",

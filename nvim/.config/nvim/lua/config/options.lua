@@ -4,16 +4,21 @@
 
 local opt = vim.opt
 
-opt.ignorecase = true
+opt.ignorecase = false
 
 -- pandoc related
 
 opt.spell = false
+opt.spelllang = "ru,en"
 opt.foldmethod = "manual"
 opt.foldenable = false
 
 -- undo
--- vim.opt.undodir = vim.fn.expand('~/.nvim/undodir')
+opt.swapfile = false
+opt.backup = false
+opt.writebackup = false
+opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+opt.undofile = true
 
 -- scrolling
 opt.number = false
@@ -22,19 +27,26 @@ opt.scrolloff = 8
 opt.linebreak = true
 
 -- indentation
--- o.expandtab = true              -- convert tabs to spaces
--- o.tabstop = 4                   -- insert 4 spaces for a tab
--- o.shiftwidth = 4                -- the number of spaces inserted for each indentation
--- o.smartindent = true
+opt.expandtab = true              -- convert tabs to spaces
+opt.smartindent = true
+opt.smarttab = true
+opt.softtabstop = 4                   -- insert 4 spaces for a tab
+opt.shiftwidth = 4               -- the number of spaces inserted for each indentation
+opt.tabstop = 4                   -- insert 4 spaces for a tab
 
--- windows
--- vim.o.splitbelow = true
--- vim.o.splitright = true
+opt.hlsearch = false
+opt.incsearch = true
 
--- completion
--- vim.o.timeoutlen = 300 -- time to wait for a mapped sequence to complete
---
--- g.vim_markdown_conceal = 0
---
--- opt.vim_markdown_conceal = 0
---
+opt.updatetime = 100
+
+-- opt.signcolumn = "auto:1"
+
+opt.textwidth=72
+
+vim.g.mapleader = " "
+
+opt.listchars = "space:*,trail:*,nbsp:*,extends:>,precedes:<,tab:\\|>"
+opt.list = false
+
+opt.shortmess = "aoOtTI"
+opt.ttyfast = true

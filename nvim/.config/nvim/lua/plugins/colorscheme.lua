@@ -3,7 +3,7 @@ return {
   {
     "sainnhe/gruvbox-material",
     config = function()
-      vim.g.gruvbox_material_current_word = "underline"
+      --vim.g.gruvbox_material_current_word = "underline"
       vim.g.gruvbox_material_colors_override = {
         ["bg0"] = { "#111", 234 },
         ["bg1"] = { "#111", 234 },
