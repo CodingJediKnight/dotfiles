@@ -57,10 +57,10 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>")
 
-vim.keymap.set("n", "<F1>", ":set number!<CR> :set relativenumber!<CR>")
-vim.keymap.set("n", "<F2>", ":set wrap!<CR>")
-vim.keymap.set("n", "<F4>", ":set list!<CR>")
-vim.keymap.set("n", "<F7>", ":set spell!<CR>")
+vim.keymap.set({ "n", "v", "c", "i" }, "<F1>", ":set number!<CR> :set relativenumber!<CR>")
+vim.keymap.set({ "n", "v", "c", "i" }, "<F2>", ":set wrap!<CR>")
+vim.keymap.set({ "n", "v", "c", "i" }, "<F4>", ":set list!<CR>")
+vim.keymap.set({ "n", "v", "c", "i" }, "<F7>", ":set spell!<CR>")
 
 -- nvim go related
 vim.keymap.set("n", "<leader>gt", "<cmd>GoTest<CR>", { desc = "Go Test" })
