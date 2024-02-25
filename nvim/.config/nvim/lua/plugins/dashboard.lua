@@ -1,7 +1,8 @@
 return {
     "nvimdev/dashboard-nvim",
     opts = function()
-        local handle = io.popen("hostname | figlet -f slant")
+        --local handle = io.popen("hostname | figlet -f slant")
+        local handle = io.popen("whoami | tr '[:lower:]' '[:upper:]' | figlet -f slant")
         local logo = handle:read("*a")
         handle:close()
         logo = string.rep("\n", 8) .. logo .. "\n\n"
