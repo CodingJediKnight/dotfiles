@@ -42,7 +42,7 @@ k.set("n", "<leader>Y", '"+Y')
 k.set("n", "<leader>d", '"_d')
 k.set("v", "<leader>d", '"_d')
 
-k.set("n", "<C-L>", ':nohl<CR><C-L>')
+k.set("n", "<C-L>", ":nohl<CR><C-L>")
 
 -- Prevent exiting on Control-z
 k.set("n", "Q", "<nop>")
@@ -56,7 +56,6 @@ k.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 k.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 k.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
-k.set("n", "<leader>x", "<cmd>!chmod +x %<CR>")
 
 k.set({ "n", "v", "c", "i" }, "<F1>", ":set number!<CR> :set relativenumber!<CR>")
 k.set({ "n", "v", "c", "i" }, "<F2>", ":set wrap!<CR>")
@@ -67,3 +66,4 @@ k.set({ "n", "v", "c", "i" }, "<F7>", ":set spell!<CR>")
 
 -- nvim go related
 k.set("n", "<leader>gt", "<cmd>GoTest<CR>", { desc = "Go Test" })
+k.set("n", "<leader>gd", "<cmd>GoDebug<CR>", { desc = "Go Debug" })
