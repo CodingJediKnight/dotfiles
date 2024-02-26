@@ -430,6 +430,9 @@ au bufnewfile,bufRead *.txt set spell
 " checking ru spelling
 set spelllang=ru,en
 
+" clipboard sync with system
+set clipboard=unnamed
+
 "fix bork bash detection
 if has("eval")  " vim-tiny detection
 fun! s:DetectBash()

@@ -1,7 +1,16 @@
 -- Autocmds are automatically loaded on the VeryLazy event
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 -- Add any additional autocmds here
---
+
+local api = vim.api
+
+--- Remove all trailing whitespace on save
+local TrimWhiteSpaceGrp = api.nvim_create_augroup("TrimWhiteSpaceGrp", { clear = true })
+api.nvim_create_autocmd("BufWritePre", {
+    command = [[:%s/\s\+$//e]],
+    group = TrimWhiteSpaceGrp,
+})
+
 -- disable completion on markdown files by default
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "gitcommit", "markdown" },
