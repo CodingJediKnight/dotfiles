@@ -67,3 +67,4 @@ k.set({ "n", "v", "c", "i" }, "<F7>", ":set spell!<CR>")
 -- nvim go related
 k.set("n", "<leader>gt", "<cmd>GoTest<CR>", { desc = "Go Test" })
 k.set("n", "<leader>gd", "<cmd>GoDebug<CR>", { desc = "Go Debug" })
+k.set("n", "<leader>gC", "<cmd>GoCmt<CR>", { desc = "Go Cmt" })
