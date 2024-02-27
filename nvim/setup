@@ -7,6 +7,5 @@ rm -rf "$HOME/.cache/nvim"
 
 mkdir -p "$HOME/.config/nvim/lua"
 ln -sf "$PWD/.config/nvim/init.lua" "$HOME/.config/nvim/init.lua"
-ln -sf "$PWD/.config/nvim/lazyvim.json" "$HOME/.config/nvim/lazyvim.json"
 ln -sf "$PWD/.config/nvim/lua/config" "$HOME/.config/nvim/lua/config"
 ln -sf "$PWD/.config/nvim/lua/plugins" "$HOME/.config/nvim/lua/plugins"

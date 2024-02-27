@@ -40,6 +40,7 @@ export GOPRIVATE="github.com/$GITUSER/*,gitlab.com/$GLUSER/*"
 #export GOPATH="$HOME/.local/go"
 #export GOBIN="$HOME/.local/bin"
 export GOPROXY=direct
+#export GOPROXY="https://proxy.golang.org"
 export CGO_ENABLED=0
 #export PYTHONDONTWRITEBYTECODE=2
 #export LC_COLLATE=C
