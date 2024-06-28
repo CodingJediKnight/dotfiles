@@ -41,6 +41,7 @@ fi
 ln -sf "$PWD/.profile" "$HOME/.bash_profile"
 
 [ ! -d ~/.ssh ] && mkdir ~/.ssh
+[ ! -d ~/.ssh/control ] && mkdir ~/.ssh/control
 ln -sf "$PWD/.ssh_config" "$HOME/.ssh/config"
 
 for i in vim tmux lynx gh docker podman; do
