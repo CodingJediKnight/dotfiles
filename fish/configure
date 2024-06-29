@@ -58,4 +58,5 @@ fish_add_path "$SCRIPTS"
 
 fish_add_path "/Applications/GoLand.app/Contents/MacOS"
 
+echo (which fish) | sudo tee -a /private/etc/shells
 chsh -s (which fish)
