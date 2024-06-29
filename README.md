@@ -137,7 +137,7 @@ baseUrl="localhost:5000/v1" # write your own OpenAI ChatGPT API entry
 yq -i "
   .temp = 0.7 |
   .topp = 0.7 |
-  .stop: [\"### Instruction\"] |
+  .stop = [\"### Instruction\"] |
   .max-input-chars = 24500 |
   .max-tokens = 2048 |
   .apis.cjk-gpt.base-url = \"$baseUrl\" |
