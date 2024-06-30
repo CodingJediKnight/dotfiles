@@ -3,6 +3,8 @@
 _have() { type "$1" &>/dev/null; }
 ! _have mods && echo "requires charmbracelet/mods" && exit 1
 
+export OPENAI_API_KEY="_"
+
 if [ -e "$HOME/.config/gpt/token" ]; then
     declare OPENAI_API_KEY
     OPENAI_API_KEY="$(head -1 "$HOME/.config/gpt/token")"
