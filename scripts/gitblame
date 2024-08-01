@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # save as i.e.: git-authors and set the executable flag
 git ls-tree -r -z --name-only HEAD -- $1 | sed 's/^/.\//' | xargs -0 -n1 git blame \
