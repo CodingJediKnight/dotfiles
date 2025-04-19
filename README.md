@@ -10,7 +10,7 @@ git clone https://github.com/CodingJediKnight/dotfiles.git && cd dotfiles
 ./setup
 ```
 
-Create `~/.bash_presonal`, `~/.bash_private` or `~/.bash_work` to change settings.
+Create `~/.bash_personal`, `~/.bash_private` or `~/.bash_work` to change settings.
 For example:
 
 ```bash
